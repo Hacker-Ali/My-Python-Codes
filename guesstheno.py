@@ -4,9 +4,10 @@ guesses_available = 9
 while 1 :
 
 	if guesses_available > 0 :
+		
 		guessed_no = int(input("guess a no:"))
-	
-	        if guessed_no > n :
+
+		if guessed_no > n :
 			print("your no is greater")
 			guesses_available -= 1
 			print ("no of guesses left :" , guesses_available)
@@ -16,7 +17,7 @@ while 1 :
 			guesses_available -= 1
 			print ("no of guesses left :" , guesses_available)
 			
-		else guessed_no == n:
+		else :
 			print("you won")
 			print ("no of guesses taken:" , 9-guesses_available)
 			break
@@ -28,6 +29,7 @@ while 1 :
 	else :
 		print('unexpected error')
 		break
+
 	
 				
 			
