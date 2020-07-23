@@ -6,11 +6,11 @@ if a ==1 or a==0 :
 
 	if a==1 :
 		for i in range(n):
-			print('*' * (i+1))
+			print(' * ' * (i+1))
 			
 	else :
 		for i in range(n):
-			print('*' * (n-i))
+			print(' * ' * (n-i))
 			
 else : 
 	print('choose correct option')
