@@ -10,12 +10,12 @@ bot_score = 0
 def scores():
 	print (f"Computer's score : {bot_score}")
 	print (f"{player_name}'s score : {player_score}")
-
-
-for i in range(rounds):
+rn=0
+while rn < rounds :
+	rn += 1 
 	time.sleep(2)
 	print("******************************************************************************************************************")
-	print(f"ROUND - {i+1}")
+	print(f"ROUND - {rn}")
 	bot_choice = random.choice([1, 2, 3])
 	player_choice = int(input("Choose any one:\n\t[1]Stone\n\t[2]Paper\n\t[3]Scissors\n------->"))
 	time.sleep(1)
@@ -63,6 +63,7 @@ for i in range(rounds):
 
 	else :
 		print("Choose correct option")
+		rn -= 1
 
 time.sleep(2)
 print("******************************************************************************************************************")
