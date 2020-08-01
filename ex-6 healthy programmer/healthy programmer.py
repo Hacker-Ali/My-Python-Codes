@@ -25,11 +25,9 @@ def play(song):
                 print("Record updated successfully!")
             break
         else :
-            continue
-
-
-if __name__ == '__main__':
-
+            pass
+            
+def reminder():
     while True:
         try:
             eye_repeat=int(input("After how many minutes you want to get notified for relaxing your eyes:\t"))*60
@@ -57,17 +55,41 @@ if __name__ == '__main__':
                 play("water")
             else:
                 pass
-    
-    
-
-
-
-    
-        
-
-
-
             
-        
+def main():
 
+    task = int(input("Choose correct option:\n[1]Run Reminder\n[2]Fecth Previous Record\n"))
+    if task == 1 :
+        reminder()
+    elif task == 2:
+        def submain():
+            rtf = int(input("Choose correct option:\n[1]Fetch eyes activity record\n[2]Fetch physical activity record\n[3]Fetch water drinking record\n "))
+            try:
+                if rtf == 1 :
+                    with open("eyes.txt") as file:
+                        print("You did eyes activity at these times")
+                        for lines in file:
+                            print(lines , end="")
+                    main()
+                elif rtf == 2 :
+                    with open("physical.txt") as file:
+                        print("You did physical activity at these times")
+                        for lines in file:
+                            print(lines, end="")
+                    main()
+                elif rtf == 3 :
+                    with open("water.txt") as file:
+                        print("You drank water at these times")
+                        for lines in file:
+                            print(lines, end="")
+                    main()
+                else:
+                    submain()
+            except Exception as error1:
+                print("Please add something to your record first!")
+                main()
+        submain()
+    else :
+        main()
 
+main()
